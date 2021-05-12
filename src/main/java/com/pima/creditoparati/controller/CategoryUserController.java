@@ -1,8 +1,11 @@
-package com.Xoot.CreditoParaTi.controllers;
+package com.pima.creditoparati.controller;
+
+import com.pima.creditoparati.dao.services.ICategoryUserService;
+import com.pima.creditoparati.entity.CategoryUser;
+import com.pima.creditoparati.entity.DTO.CategoryUserDTO;
 
 import java.util.Date;
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -16,9 +19,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.Xoot.CreditoParaTi.entity.CategoryUser;
-import com.Xoot.CreditoParaTi.entity.DTO.CategoryUserDTO;
-import com.Xoot.CreditoParaTi.models.dao.services.ICategoryUserService;
 
 
 @CrossOrigin(origins= {"http://localhost:4200"})//Cross para angular

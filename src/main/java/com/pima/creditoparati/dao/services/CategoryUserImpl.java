@@ -1,14 +1,12 @@
-package com.Xoot.CreditoParaTi.models.dao.services;
+package com.pima.creditoparati.dao.services;
 
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.Xoot.CreditoParaTi.entity.CategoryUser;
-import com.Xoot.CreditoParaTi.models.dao.ICategoryUserDao;
-
+import com.pima.creditoparati.dao.ICategoryUserDao;
+import com.pima.creditoparati.entity.CategoryUser;
 
 @Service
 public class CategoryUserImpl implements ICategoryUserService {

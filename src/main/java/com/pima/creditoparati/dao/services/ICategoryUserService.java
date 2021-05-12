@@ -1,8 +1,8 @@
-package com.Xoot.CreditoParaTi.models.dao.services;
+package com.pima.creditoparati.dao.services;
+
+import com.pima.creditoparati.entity.CategoryUser;
 
 import java.util.List;
-
-import com.Xoot.CreditoParaTi.entity.CategoryUser;
 
 public interface ICategoryUserService {
 	public List<CategoryUser> findAll();

@@ -1,4 +1,4 @@
-package com.Xoot.CreditoParaTi.entity.DTO;
+package com.pima.creditoparati.entity.DTO;
 
 public class UserDTO {
 	private String userName;

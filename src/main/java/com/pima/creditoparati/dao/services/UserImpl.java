@@ -1,13 +1,12 @@
-package com.Xoot.CreditoParaTi.models.dao.services;
+package com.pima.creditoparati.dao.services;
 
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.Xoot.CreditoParaTi.entity.User;
-import com.Xoot.CreditoParaTi.models.dao.IUserDao;
+import com.pima.creditoparati.dao.IUserDao;
+import com.pima.creditoparati.entity.User;
 
 @Service
 public class UserImpl  implements IUserService{
@@ -42,6 +41,4 @@ public class UserImpl  implements IUserService{
 	public User userLogin(String userName, String pass) {
 		return (User)userDao.findByLogin(userName, pass);
 	}
-	
-	
 }

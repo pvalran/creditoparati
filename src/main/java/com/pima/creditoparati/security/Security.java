@@ -1,4 +1,4 @@
-package com.Xoot.CreditoParaTi;
+package com.pima.creditoparati.security;
 
 import java.io.Serializable;
 import java.security.spec.KeySpec;

@@ -1,11 +1,12 @@
-package com.Xoot.CreditoParaTi.models.dao;
+package com.pima.creditoparati.dao;
+
+import com.pima.creditoparati.entity.User;
 
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 
-import com.Xoot.CreditoParaTi.entity.User;
 
 public interface IUserDao extends CrudRepository<User, Long>, JpaSpecificationExecutor<User>{
 	
