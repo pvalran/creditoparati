@@ -9,36 +9,43 @@ import com.pima.creditoparati.dao.IUserDao;
 import com.pima.creditoparati.entity.User;
 
 @Service
-public class UserImpl  implements IUserService{
-	@Autowired
-	private IUserDao userDao;
-	
-	@Override
-	@Transactional(readOnly = true)
-	public List<User> findAll() {
-		return (List<User>)userDao.findAll();
-	}
+public class UserImpl implements IUserService {
 
-	@Override
-	@Transactional(readOnly = true)
-	public User findById(Long id) {
-		return userDao.findById(id).orElse(null);
-	}
+    @Autowired
+    private IUserDao userDao;
 
-	@Override
-	@Transactional
-	public User save(User user) {
-		return userDao.save(user);
-	}
+    @Override
+    @Transactional(readOnly = true)
+    public List<User> findAll() {
+        return (List<User>) userDao.findAll();
+    }
 
-	@Override
-	@Transactional
-	public void delete(Long id) {
-		userDao.deleteById(id);
-	}
+    @Override
+    @Transactional(readOnly = true)
+    public User findById(Long id) {
+        return userDao.findById(id).orElse(null);
+    }
 
-	@Override
-	public User userLogin(String userName, String pass) {
-		return (User)userDao.findByLogin(userName, pass);
-	}
+    @Override
+    @Transactional
+    public User save(User user) {
+        return userDao.save(user);
+    }
+
+    @Override
+    @Transactional
+    public void delete(Long id) {
+        userDao.deleteById(id);
+    }
+
+    @Override
+    public User userLogin(String userName, String pass) {
+        return (User) userDao.findByLogin(userName, pass);
+    }
+
+    @Override
+    @Transactional(readOnly = true)
+    public List<User> findAllActive() {
+        return userDao.findAllActive();
+    }
 }

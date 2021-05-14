@@ -14,4 +14,6 @@ public interface IUserService {
 	public void delete(Long id);
 	
 	public User userLogin(String userName, String pass);
+        
+        public List<User> findAllActive();
 }
