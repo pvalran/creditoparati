@@ -1,4 +1,4 @@
-package com.pima.creditoparati.security;
+package com.pima.creditoparati.utilidades;
 
 import java.io.Serializable;
 import java.security.spec.KeySpec;

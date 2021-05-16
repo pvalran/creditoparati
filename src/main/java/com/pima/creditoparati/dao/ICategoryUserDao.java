@@ -6,8 +6,8 @@ import com.pima.creditoparati.entity.CategoryUser;
 import java.util.List;
 import org.springframework.data.jpa.repository.Query;
 
-public interface ICategoryUserDao extends CrudRepository<CategoryUser, Long> {
-
-    @Query(nativeQuery = true, value = "SELECT * FROM creditoparati.category_user WHERE activo = 1;")
+public interface ICategoryUserDao extends CrudRepository<CategoryUser, Integer> {
+	
+	@Query(nativeQuery = true, value = "SELECT * FROM creditoparati.category_user WHERE status_flag = 1;")
     List<CategoryUser> findAllActive();
 }

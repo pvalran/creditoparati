@@ -22,7 +22,7 @@ public class CategoryUserImpl implements ICategoryUserService {
 
     @Override
     @Transactional(readOnly = true)
-    public CategoryUser findById(Long id) {
+    public CategoryUser findById(Integer id) {
         return categoryUserDao.findById(id).orElse(null);
     }
 
@@ -34,7 +34,7 @@ public class CategoryUserImpl implements ICategoryUserService {
 
     @Override
     @Transactional
-    public void delete(Long id) {
+    public void delete(Integer id) {
         categoryUserDao.deleteById(id);
     }
 

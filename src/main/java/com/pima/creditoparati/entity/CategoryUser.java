@@ -11,68 +11,92 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 @Entity
-@Table(name="CategoryUser")
+@Table(name = "CategoryUser")
 public class CategoryUser {
-	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private Long idCategoryUser;
-	
-	private String name;
-	private Integer activo;
-	
-	@Column(name = "dtCreate", length = 50)
-	@Temporal(TemporalType.DATE)
-	private java.util.Date  dtCreate;
-	
-	@Column(name = "dtModify", length = 50)
-	@Temporal(TemporalType.DATE)
-	private java.util.Date  dtModify;
-	
-	@PrePersist
-	public void prePersist() {
-		dtModify = new java.util.Date();
-	}
 
-	public Long getIdCategoryUser() {
-		return idCategoryUser;
-	}
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer category_id;
 
-	public void setIdCategoryUser(Long idCategoryUser) {
-		this.idCategoryUser = idCategoryUser;
-	}
+    @Column(name = "name")
+    private String name;
 
-	public String getName() {
-		return name;
-	}
+    @Column(name = "status_flag")
+    private Integer status_flag;
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    @Column(name = "crtd_on")
+    @Temporal(TemporalType.TIMESTAMP)
+    private java.util.Date crtd_on;
 
-	public Integer getActivo() {
-		return activo;
-	}
+    @Column(name = "crtd_by", length = 50)
+    private String crtd_by;
 
-	public void setActivo(Integer activo) {
-		this.activo = activo;
-	}
+    @Column(name = "mdfd_on")
+    @Temporal(TemporalType.TIMESTAMP)
+    private java.util.Date mdfd_on;
 
-	public java.util.Date getDtCreate() {
-		return dtCreate;
-	}
+    @Column(name = "mdfd_by", length = 50)
+    private String mdfd_by;
 
-	public void setDtCreate(java.util.Date dtCreate) {
-		this.dtCreate = dtCreate;
-	}
+    @PrePersist
+    public void prePersist() {
+        crtd_on = new java.util.Date();
+        mdfd_on = new java.util.Date();
+    }
 
-	public java.util.Date getDtModify() {
-		return dtModify;
-	}
+    public Integer getCategory_id() {
+        return category_id;
+    }
 
-	public void setDtModify(java.util.Date dtModify) {
-		this.dtModify = dtModify;
-	}
-	
-	
-	
+    public void setCategory_id(Integer category_id) {
+        this.category_id = category_id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Integer getStatus_flag() {
+        return status_flag;
+    }
+
+    public void setStatus_flag(Integer status_flag) {
+        this.status_flag = status_flag;
+    }
+
+    public java.util.Date getCrtd_on() {
+        return crtd_on;
+    }
+
+    public void setCrtd_on(java.util.Date crtd_on) {
+        this.crtd_on = crtd_on;
+    }
+
+    public String getCrtd_by() {
+        return crtd_by;
+    }
+
+    public void setCrtd_by(String crtd_by) {
+        this.crtd_by = crtd_by;
+    }
+
+    public java.util.Date getMdfd_on() {
+        return mdfd_on;
+    }
+
+    public void setMdfd_on(java.util.Date mdfd_on) {
+        this.mdfd_on = mdfd_on;
+    }
+
+    public String getMdfd_by() {
+        return mdfd_by;
+    }
+
+    public void setMdfd_by(String mdfd_by) {
+        this.mdfd_by = mdfd_by;
+    }
 }

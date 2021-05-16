@@ -22,7 +22,7 @@ public class UserImpl implements IUserService {
 
     @Override
     @Transactional(readOnly = true)
-    public User findById(Long id) {
+    public User findById(Integer id) {
         return userDao.findById(id).orElse(null);
     }
 
@@ -34,7 +34,7 @@ public class UserImpl implements IUserService {
 
     @Override
     @Transactional
-    public void delete(Long id) {
+    public void delete(Integer id) {
         userDao.deleteById(id);
     }
 

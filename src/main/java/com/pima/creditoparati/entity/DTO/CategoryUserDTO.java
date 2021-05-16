@@ -2,15 +2,15 @@ package com.pima.creditoparati.entity.DTO;
 
 public class CategoryUserDTO {
 
-    private Long idCategory;
+    private Integer idCategoryUser;
     private String name;
 
-    public Long getIdCategory() {
-        return idCategory;
+    public Integer getIdCategoryUser() {
+        return idCategoryUser;
     }
 
-    public void setIdCategory(Long idCategory) {
-        this.idCategory = idCategory;
+    public void setIdCategoryUser(Integer idCategoryUser) {
+        this.idCategoryUser = idCategoryUser;
     }
 
     public String getName() {

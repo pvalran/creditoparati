@@ -2,34 +2,26 @@ package com.pima.creditoparati.entity.DTO;
 
 public class UserDTO {
 
-    private Long idUser;
-    private String userName;
-    private String email;
+    private Integer idUser;
+    private String username;
     private String password;
-    private Long idCategory;
+    private String email;
+    private Integer idCategory;
 
-    public Long getIdUser() {
+    public Integer getIdUser() {
         return idUser;
     }
 
-    public void setIdUser(Long idUser) {
+    public void setIdUser(Integer idUser) {
         this.idUser = idUser;
     }
 
-    public String getUserName() {
-        return userName;
+    public String getUsername() {
+        return username;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getPassword() {
@@ -40,12 +32,19 @@ public class UserDTO {
         this.password = password;
     }
 
-    public Long getIdCategory() {
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public Integer getIdCategory() {
         return idCategory;
     }
 
-    public void setIdCategory(Long idCategory) {
+    public void setIdCategory(Integer idCategory) {
         this.idCategory = idCategory;
     }
-
 }
