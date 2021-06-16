@@ -1,4 +1,4 @@
-package com.pima.creditoparati.security;
+package com.pima.creditoparati.utilidades;
 
 import java.io.Serializable;
 import java.security.spec.KeySpec;
@@ -11,18 +11,16 @@ import javax.crypto.spec.IvParameterSpec;
 import javax.crypto.spec.PBEKeySpec;
 import javax.crypto.spec.SecretKeySpec;
 
+public class Security implements Serializable {
 
+    private static final long serialVersionUID = 1L;
 
-public class Security implements Serializable{
-
-	private static final long serialVersionUID = 1L;
-	
-	private static final String secretKeyAES = "@Esp8bi0is+awesI-4SWlwocuy&fUf2*";
+    private static final String secretKeyAES = "@Esp8bi0is+awesI-4SWlwocuy&fUf2*";
     private static final String saltAES = "swL5o=Ra*=d+$xOSPac!ADUSw5P#_O7H";
-    
+
     public Security() {
     }
-    
+
     public String getAES(String data) {
         try {
             byte[] iv = new byte[16];
@@ -39,7 +37,7 @@ public class Security implements Serializable{
         }
         return null;
     }
-    
+
     public String getAESDecrypt(String data) {
         byte[] iv = new byte[16];
         try {

@@ -17,49 +17,62 @@ import javax.persistence.TemporalType;
 public class User {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private Long idUser;
+	private Integer idUser;
 	
-	private String userName;
+	@Column(name = "username", length = 16)
+	private String username;
+	
+	@Column(name = "email", length = 255)
 	private String email;
+	
+	@Column(name = "password", length = 32)
 	private String password;
-	private Integer activo;
 	
 	@OneToOne
-	@JoinColumn(name = "idCategoryUser")
-	//@RestResource (path = "libraryAddress", rel="address")
+	@JoinColumn(name = "category_id")
 	private CategoryUser categoryUser;
 	
-	@Column(name = "dtLastLogin", length = 50)
-	@Temporal(TemporalType.DATE)
+	@Column(name = "status_flag")
+	private Integer status_flag;
+	
+	@Column(name = "lastLogin")
+	@Temporal(TemporalType.TIMESTAMP)
 	private java.util.Date  dtLastLogin;
 	
-	@Column(name = "dtCreate", length = 50)
-	@Temporal(TemporalType.DATE)
-	private java.util.Date  dtCreate;
+	@Column(name = "crtd_on")
+	@Temporal(TemporalType.TIMESTAMP)
+	private java.util.Date  crtd_on;
 	
-	@Column(name = "dtModify", length = 50)
-	@Temporal(TemporalType.DATE)
-	private java.util.Date  dtModify;
+	@Column(name = "crtd_by", length = 50)
+	private String  crtd_by;
+	
+	@Column(name = "mdfd_on")
+	@Temporal(TemporalType.TIMESTAMP)
+	private java.util.Date  mdfd_on;
+	
+	@Column(name = "mdfd_by", length = 50)
+	private String  mdfd_by;
 	
 	@PrePersist
 	public void prePersist() {
-		dtModify = new java.util.Date();
+		crtd_on = new java.util.Date();
+		mdfd_on = new java.util.Date();
 	}
 
-	public Long getIdUser() {
+	public Integer getIdUser() {
 		return idUser;
 	}
 
-	public void setIdUser(Long idUser) {
+	public void setIdUser(Integer idUser) {
 		this.idUser = idUser;
 	}
 
-	public String getUserName() {
-		return userName;
+	public String getUsername() {
+		return username;
 	}
 
-	public void setUserName(String userName) {
-		this.userName = userName;
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 	public String getEmail() {
@@ -78,20 +91,20 @@ public class User {
 		this.password = password;
 	}
 
-	public Integer getActivo() {
-		return activo;
-	}
-
-	public void setActivo(Integer activo) {
-		this.activo = activo;
-	}
-
 	public CategoryUser getCategoryUser() {
 		return categoryUser;
 	}
 
 	public void setCategoryUser(CategoryUser categoryUser) {
 		this.categoryUser = categoryUser;
+	}
+
+	public Integer getStatus_flag() {
+		return status_flag;
+	}
+
+	public void setStatus_flag(Integer status_flag) {
+		this.status_flag = status_flag;
 	}
 
 	public java.util.Date getDtLastLogin() {
@@ -102,20 +115,36 @@ public class User {
 		this.dtLastLogin = dtLastLogin;
 	}
 
-	public java.util.Date getDtCreate() {
-		return dtCreate;
+	public java.util.Date getCrtd_on() {
+		return crtd_on;
 	}
 
-	public void setDtCreate(java.util.Date dtCreate) {
-		this.dtCreate = dtCreate;
+	public void setCrtd_on(java.util.Date crtd_on) {
+		this.crtd_on = crtd_on;
 	}
 
-	public java.util.Date getDtModify() {
-		return dtModify;
+	public String getCrtd_by() {
+		return crtd_by;
 	}
 
-	public void setDtModify(java.util.Date dtModify) {
-		this.dtModify = dtModify;
+	public void setCrtd_by(String crtd_by) {
+		this.crtd_by = crtd_by;
+	}
+
+	public java.util.Date getMdfd_on() {
+		return mdfd_on;
+	}
+
+	public void setMdfd_on(java.util.Date mdfd_on) {
+		this.mdfd_on = mdfd_on;
+	}
+
+	public String getMdfd_by() {
+		return mdfd_by;
+	}
+
+	public void setMdfd_by(String mdfd_by) {
+		this.mdfd_by = mdfd_by;
 	}
 	
 }

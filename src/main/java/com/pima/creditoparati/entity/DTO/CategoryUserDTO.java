@@ -1,18 +1,23 @@
 package com.pima.creditoparati.entity.DTO;
 
 public class CategoryUserDTO {
-	private String name;
-	private Integer activo;
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
-	public Integer getActivo() {
-		return activo;
-	}
-	public void setActivo(Integer activo) {
-		this.activo = activo;
-	}
+
+    private Integer idCategoryUser;
+    private String name;
+
+    public Integer getIdCategoryUser() {
+        return idCategoryUser;
+    }
+
+    public void setIdCategoryUser(Integer idCategoryUser) {
+        this.idCategoryUser = idCategoryUser;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 }
